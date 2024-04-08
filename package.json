@@ -3,13 +3,20 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "db:type": "bun run kysely-codegen"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/cors": "^1.0.2",
+    "@elysiajs/jwt": "^1.0.2",
+    "elysia": "latest",
+    "kysely": "^0.27.3",
+    "pg": "^8.11.5"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/pg": "^8.11.4",
+    "bun-types": "latest",
+    "kysely-codegen": "^0.14.2"
   },
   "module": "src/index.js",
   "bun-create": {
