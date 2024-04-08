@@ -9,7 +9,7 @@ export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 export interface ElyUser {
   created_at: Generated<Timestamp>;
   email: string;
-  id: Generated<string>;
+  id: string;
   is_active: Generated<boolean>;
   name: string;
   password: string;
