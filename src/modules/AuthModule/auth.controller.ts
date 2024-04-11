@@ -1,5 +1,5 @@
 import { DatabaseError } from "pg";
-import { db } from "../../db";
+import { db } from "@/db";
 import Elysia, { Static, StatusMap } from "elysia";
 import { UserSignInDTO, UserSignUpDTO } from "./auths.dto";
 import { ElysiaCookie } from "elysia/dist/cookies";
