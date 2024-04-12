@@ -6,7 +6,7 @@ export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
 
 export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 
-export interface ElyUser {
+export interface User {
   created_at: Generated<Timestamp>;
   email: string;
   id: string;
@@ -18,6 +18,13 @@ export interface ElyUser {
   username: string;
 }
 
+export interface Post {
+  id: string;
+  author_id: string;
+  content: string;
+  created_at: Generated<Timestamp>;
+  updated_at: Generated<Timestamp>;
+}
 export interface JWTPayload {
   id: string;
   email: string;
@@ -25,5 +32,6 @@ export interface JWTPayload {
 }
 
 export interface DB {
-  ely_user: ElyUser;
+  ely_user: User;
+  ely_post: Post;
 }
