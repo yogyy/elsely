@@ -60,11 +60,16 @@ EXECUTE PROCEDURE trigger_set_updated_at();
 
 CREATE TABLE "ely_post" (
     id VARCHAR(50) PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    authorId VARCHAR REFERENCES "ely_user"(id) ON DELETE CASCADE,
+    content VARCHAR(255) NOT NULL,
+    author_id VARCHAR REFERENCES "ely_user"(id) ON DELETE CASCADE,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TRIGGER set_updated_at_trigger
+BEFORE UPDATE ON ely_post
+FOR EACH ROW
+EXECUTE FUNCTION public.trigger_set_updated_at();
 ```
 
 #### 4. Create .env File
